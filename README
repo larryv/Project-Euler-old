@@ -1,0 +1,15 @@
+README
+2010-08-01
+
+This repository stores my solutions for Project Euler problems. The following
+points must be made.
+
+- I have made only token attempts at ensuring portability. The programs run
+  correctly on my Mac OS X 10.6.4 system, and this is all I care about.
+
+- These are not demonstrations of either programming prowess or mathematical
+  ingenuity, because I am capable of neither. The algorithms are not elegant;
+  the code is not immaculately clean. The code produces the correct result --
+  nothing more, nothing less.
+
+- I might add a makefile later, if I have nothing better to do.
