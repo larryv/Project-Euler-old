@@ -24,6 +24,7 @@
 /* Just use macros for constants */
 #define PHI   1.61803398874989484820458683436563811772  /* (1 - sqrt 5) / 2 */
 #define SQRT5 2.23606797749978969640917366873127623544  /* sqrt 5 */
+#define LIMIT 4000000
 
 
 uint32_t fib(uint32_t n);
@@ -39,16 +40,22 @@ int main(int argc, char const *argv[])
     
     uint64_t even_sum = 0;
     
-    uint32_t new_fib;
     
     size_t i = 0;
-    while((new_fib = fib(i)) <= 4000000) {
-        printf("%d\n", new_fib);
+    uint32_t new_fib = fib(i);
+    while(new_fib <= LIMIT) {
+        if (new_fib == -1) {
+            return 1;
+        }
+        
+        printf("F(%zd) = %d\n", i, new_fib);
+        
         even_sum += new_fib;
         i += 3;
+        new_fib = fib(i);
     }
-    
-    printf("%lld\n", even_sum);
+        
+    printf("==========\nResult: %lld\n", even_sum);
     return 0;
 }
 
