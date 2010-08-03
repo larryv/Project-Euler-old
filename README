@@ -9,8 +9,8 @@ points must be made.
 
 - These are not demonstrations of either programming prowess or mathematical
   ingenuity, because I am capable of neither. The algorithms are not elegant;
-  the code is not immaculately clean. The code produces the correct result --
-  nothing more, nothing less.
+  the code is not immaculately clean. The code (hopefully) produces the
+  correct result, but very likely in an over-engineered manner.
 
 - I might add a makefile later, if I have nothing better to do.
 
