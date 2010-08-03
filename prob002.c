@@ -43,7 +43,7 @@ int main(int argc, char const *argv[])
     
     size_t i = 0;
     uint32_t new_fib = fib(i);
-    while(new_fib <= LIMIT) {
+    while (new_fib <= LIMIT) {
         if (new_fib == -1) {
             return 1;
         }
