@@ -12,10 +12,10 @@ points must be made.
   the code is not immaculately clean. The code (hopefully) produces the
   correct result, but very likely in an over-engineered manner.
 
-- I might add a makefile later, if I have nothing better to do.
-
 - Exact-width integer variables are used pervasively. I expect many of them
-  are used incorrectly.
+  are used incorrectly, if not most of them.
+
+TODO: HOW TO BUILD
 
 Lawrence Velázquez
 larry.velazquez@gmail.com
