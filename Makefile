@@ -1,4 +1,4 @@
-# Makefile for Project Euler 
+# Makefile for Project Euler
 
 # Command options
 SHELL = /bin/sh
@@ -7,27 +7,34 @@ SHELL = /bin/sh
 CC = gcc
 CFLAGS = -std=c99 -Wall -g
 
-# Name of utility library
+# Library name and version information
 utils = peutils
+dylibmajorversion = 1
+dylibminorversion = 0
+dylibcurrversion = $(dylibmajorversion).$(dylibminorversion)
+dylibcompatversion = 1.0
 
 
 # Targets
+dylib: lib$(utils).$(dylibmajorversion).dylib
+
+lib$(utils).$(dylibmajorversion).dylib: $(utils).c $(utils).h
+	$(CC) $(CFLAGS) -fvisibility=hidden -dynamiclib -o $@ \
+	    -current_version $(dylibcurrversion) \
+	    -compatibility_version $(dylibcompatversion) \
+	    $<
+
 clean:
 	-rm -fR *.dylib *.dSYM
 
 info:
 	@echo "Compiler:\n\t$$($(CC) --version | head -n 1)"
 
-lib: lib$(utils).dylib
-
-lib$(utils).dylib: $(utils).c
-	$(CC) $(CFLAGS) -dynamiclib -o $@ $^
-
 
 
 # Phony targets
-.PHONY: clean info lib
+.PHONY: clean dylib info
 
 # Set suffix list explicitly
 .SUFFIXES:
-.SUFFIXES: .c .o
+.SUFFIXES: .c
