@@ -1,5 +1,7 @@
 syntax: glob
 
+*.dSYM
+*.dylib
 *.o
 *.out
 *.tmproj
