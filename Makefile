@@ -4,8 +4,8 @@
 SHELL = /bin/sh
 
 # Compiler options
-CC = gcc
-CFLAGS = -std=c99 -Wall -g
+CC = clang
+CFLAGS = -std=c99 -O0 -Wall -g
 
 # Library name and version information
 utils = peutils
@@ -19,10 +19,11 @@ dylibcompatversion = 1.0
 dylib: lib$(utils).$(dylibmajorversion).dylib
 
 lib$(utils).$(dylibmajorversion).dylib: $(utils).c $(utils).h
-	$(CC) $(CFLAGS) -fvisibility=hidden -dynamiclib -o $@ \
+	$(CC) $(CFLAGS) -o $@ $< \
+	    -dynamiclib \
 	    -current_version $(dylibcurrversion) \
 	    -compatibility_version $(dylibcompatversion) \
-	    $<
+	    -fvisibility=hidden
 
 clean:
 	-rm -fR *.dylib *.dSYM
