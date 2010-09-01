@@ -12,8 +12,8 @@ points must be made.
   the code is not immaculately clean. The code (hopefully) produces the
   correct result, but very likely in an over-engineered manner.
 
-- Exact-width integer variables are used pervasively. I expect many of them
-  are used incorrectly, if not most of them.
+- Exact-width and minimum-width integer variables are used often. I expect
+  many -- if not most -- of them are used incorrectly.
 
 TODO: HOW TO BUILD
 
