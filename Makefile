@@ -28,9 +28,6 @@ lib$(utils).$(dylibmajorversion).dylib: $(utils).c $(utils).h
 clean:
 	-rm -fR *.dylib *.dSYM
 
-info:
-	@echo "Compiler:\n\t$$($(CC) --version | head -n 1)"
-
 
 
 # Phony targets
