@@ -2,7 +2,8 @@
 
 /*
  *  peutils.h
- *  Version 1.0
+ *  VERSION: 1.0.0
+ *  AUTHOR: Lawrence Velazquez
  *
  *  Interface to libpeutils.dylib
  */

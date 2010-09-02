@@ -1,6 +1,7 @@
 /*
  *  peutils.c
- *  Version 1.0
+ *  VERSION: 1.0.0
+ *  AUTHOR: Lawrence Velazquez
  *
  *  Compile with -fvisibility=hidden
  */

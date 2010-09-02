@@ -5,7 +5,8 @@ This repository stores my solutions for Project Euler problems. The following
 points must be made.
 
 - I have made only token attempts at ensuring portability. The programs run
-  correctly on my Mac OS X 10.6.4 system, and this is all I care about.
+  correctly on my Mac OS X 10.6.4 system, and this is all I care about. You're
+  insane if you think I'm going to learn Automake or something.
 
 - These are not demonstrations of either programming prowess or mathematical
   ingenuity, because I am capable of neither. The algorithms are not elegant;
