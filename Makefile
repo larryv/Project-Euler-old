@@ -17,7 +17,7 @@ dylib_compat_version = 1.0.0
 
 
 # Targets
-all: dylib prob001
+all: dylib
 
 clean:
 	-rm -fR *.dylib *.dSYM
@@ -31,9 +31,6 @@ lib$(utils).$(dylib_major_version).dylib: $(utils).c $(utils).h
 	    -compatibility_version $(dylib_compat_version) \
 	    -fvisibility=hidden && \
 	ln -fs ./$@ ./lib$(utils).dylib
-
-prob001: prob001.c
-	$(CC) $(CFLAGS) -o $@ $< lib$(utils).dylib
 
 # test: $(utils)module.c
 # 	$(CC) $(CFLAGS)
