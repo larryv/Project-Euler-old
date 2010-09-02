@@ -5,4 +5,4 @@ syntax: glob
 *.o
 *.out
 *.tmproj
-git-commit.txt
+git-commit.tmp
