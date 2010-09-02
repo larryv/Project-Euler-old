@@ -14,7 +14,10 @@
 #define EXPORT __attribute__((visibility("default")))
 
 /****** Begin internal parameters for is_prime ******/
-/* Upper bound for domain of argument */
+/*
+    Upper bound for domain of argument. Chosen so that the Miller-Rabin test
+    only needs 7 witnesses.
+*/
 #define IS_PRIME_MAX 341550071728321
 
 /*
@@ -44,7 +47,10 @@ int is_prime(uint_fast64_t n)
         return ERROR;
     }
 
-    /* Trial division */
+    /*
+        Trial division to rule out relatively small potential prime factors.
+        Roots out a very high percentage of integer arguments.
+    */
     uint_fast32_t root_n = (uint_fast32_t) floor(sqrt(n));
     size_t i;
     for (i = 0; i < NPRIMES; ++i) {
@@ -55,7 +61,10 @@ int is_prime(uint_fast64_t n)
             return COMPOSITE;
     }
 
-    /* Begin Miller-Rabin. */
+    /*
+        Begin deterministic Miller-Rabin primality test. See
+        "Miller–Rabin primality test" Wikipedia article for details.
+    */
 
     unsigned int s = _highest_power_of_two(n - 1);
     uint_fast64_t d = (n - 1) / pow(2, s);
