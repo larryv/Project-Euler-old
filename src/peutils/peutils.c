@@ -42,6 +42,10 @@ static unsigned int _highest_power_of_two(uint_fast64_t);
 EXPORT
 int is_prime(uint_fast64_t n)
 {
+    /*
+        TODO Make sure all functions called have been error-checked.
+    */
+    
     if (n < 2 || n >= IS_PRIME_MAX) {
         errno = EDOM;
         return ERROR;
