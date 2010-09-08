@@ -1,44 +1,45 @@
-# Makefile for Project Euler
+###################################
+# Master makefile for Project Euler
+###################################
 
-# Command options
-SHELL = /bin/sh
+# Export all variables to sub-makefiles
+export
 
-# Compiler options
-CC = clang
-CFLAGS = -std=c99 -O0 -Wall -g
+SHELL := /bin/sh
 
-# Library name and version information
-utils = peutils
-dylib_major_version = 1
-dylib_minor_version = 0
-dylib_micro_version = 0
-dylib_current_version = $(dylib_major_version).$(dylib_minor_version).$(dylib_micro_version)
-dylib_compat_version = 1.0.0
+# Compilation options
+CC := clang
+CFLAGS := -std=c99 -O0 -Wall
 
+# Install options
+INSTALL := /usr/bin/install
+INSTALL_PROGRAM := $(INSTALL)
+INSTALL_DATA := $(INSTALL) -m 644
+
+# Installation directories
+prefix := $(CURDIR)
+exec_prefix := $(prefix)
+bindir := $(exec_prefix)/bin
+includedir := $(prefix)/include
+libdir := $(exec_prefix)/lib
+srcdir := $(CURDIR)/src
 
 # Targets
+.PHONY: all
 all: dylib
 
+.PHONY: clean
 clean:
 	-rm -fR *.dylib *.dSYM
 
-dylib: lib$(utils).$(dylib_major_version).dylib
+.PHONY: dylib
+dylib:
+	$(MAKE) -C $(src)/libProjEuler
 
-lib$(utils).$(dylib_major_version).dylib: $(utils).c $(utils).h
-	$(CC) $(CFLAGS) -o $@ $< \
-	    -dynamiclib \
-	    -current_version $(dylib_current_version) \
-	    -compatibility_version $(dylib_compat_version) \
-	    -fvisibility=hidden && \
-	ln -fs ./$@ ./lib$(utils).dylib
-
-# test: $(utils)module.c
+# .PHONY: test
+# test: $(lib_name)module.c
 # 	$(CC) $(CFLAGS)
 
 
-# Phony targets
-.PHONY: all clean dylib test
-
-# Set suffix list explicitly
+# Clear suffix list
 .SUFFIXES:
-.SUFFIXES: .c
