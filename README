@@ -8,8 +8,8 @@ points must be made.
   correctly on my Mac OS X 10.6.4 system, and this is all I care about. You're
   insane if you think I'm going to learn Automake or something.
 
-- These are not demonstrations of either programming prowess or mathematical
-  ingenuity, because I am capable of neither. The algorithms are not elegant;
+- These are demonstrations of neither programming prowess nor mathematical
+  ingenuity, because I am incapable of both. The algorithms are not elegant;
   the code is not immaculately clean. The code (hopefully) produces the
   correct result, but very likely in an over-engineered manner.
 
