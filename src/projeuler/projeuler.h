@@ -1,11 +1,11 @@
 #ifndef PROJEULER_H
 
 /*
- *  peutils.h
+ *  projeuler.h
  *  VERSION: 1.0.0
  *  AUTHOR: Lawrence Velazquez
  *
- *  Interface to libpeutils.dylib
+ *  Interface to libprojeuler.dylib
  */
 
 #define PROJEULER_H
@@ -28,6 +28,6 @@
  */
 int is_prime(uint_fast64_t n);
 
-/* End peutils.h */
+/* End projeuler.h */
 
 #endif

@@ -1,5 +1,5 @@
 /*
- *  peutils.c
+ *  projeuler.c
  *  VERSION: 1.0.0
  *  AUTHOR: Lawrence Velazquez
  *
@@ -9,7 +9,7 @@
 #include <errno.h>
 #include <math.h>
 #include <stddef.h>
-#include "peutils.h"
+#include "projeuler.h"
 
 #define EXPORT __attribute__((visibility("default")))
 
